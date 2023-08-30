@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div th:fragment="admin">
+        <ul>
+            <li><a href="/home">Главная</a></li>
+            <li><a href="/admin/manageClients">Управление клиентами</a></li>
+            <li><a href="/admin/manageBarbers">Управление барберами</a></li>
+            <li><a href="/admin/addSpecialization">Добавить услугу</a></li>
+            <li><a href="/admin/viewAllSpecializations">Просмотреть все услуги</a></li>
+            <li><a href="/admin/confirmPayment">Подтвердить оплату выполненных услуг</a></li>
+            <li><a href="/viewBarbersStat">Посмотреть статистику парикмахеров</a></li>
+            <li><a href="/admin/viewSpecializationsStat">Просмотреть статистику услуг</a></li>
+            <li><a href="/admin/viewEarningsStat">Просмотреть статистику выручки</a></li>
+            <li>
+                <form method="POST" th:action="@{/logout}">
+                    <input type="submit" value="Выйти"/>
+                </form>
+            </li>
+        </ul>
+    </div>
+
+    <div th:fragment="client">
+        <a href="/home">Главная</a>
+        <a href="/client/editSelfInfo">Редактировать личную информацию</a>
+        <a href="/client/makeAnAppointment">Записаться на услугу</a>
+        <a href="/client/viewAllBarbers">Просмотреть всех парикмахеров</a>
+        <a href="/client/viwAllServices">Просмотреть все услуги</a>
+        <a href="/client/viewSchedule">Просмотреть свое расписание</a>
+        <form method="POST" th:action="@{/logout}">
+            <input type="submit" value="Выйти"/>
+        </form>
+
+    </div>
+
+    <div th:fragment="barber">
+        <a href="/home">Главная</a>
+        <a href="/barber/editSelfInfo">Редактировать личную информацию</a>
+        <a href="/barber/viewSchedule">Посмотреть расписание</a>
+        <a href="/viewBarbersStat">Посмотерть статистику парикмахеров</a>
+        <a href="/barber/viewAllClients">Посмотреть всех клиентов</a>
+        <form method="POST" th:action="@{/logout}">
+            <input type="submit" value="Выйти"/>
+        </form>
+    </div>
+</body>
+</html>
